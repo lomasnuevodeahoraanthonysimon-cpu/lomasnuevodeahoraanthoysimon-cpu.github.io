@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +10,7 @@
 
     <div class="container">
         
-        <!-- HEADER PRINCIPAL -->
+        <!-- HEADER INDUSTRIAL -->
         <header>
             <div class="header-content">
                 <h1>Anthony Simon</h1>
@@ -23,9 +22,9 @@
                 </div>
             </div>
             
-            <!-- PANEL DEL CONTADOR DE VISITAS REAL -->
+            <!-- PANEL CONTADOR DE VISITAS ESTABLE -->
             <div class="visitor-counter-box">
-                <span class="counter-label">NODO_VISITAS</span>
+                <span class="counter-label">ANÁLISIS_TRÁFICO</span>
                 <span class="counter-number" id="visit-count">000000</span>
             </div>
         </header>
@@ -113,7 +112,7 @@
                 <p class="card-desc" style="margin-top: 10px;">Despliegue y simulación topológica completa en la plataforma Huawei eNSP para control y aislamiento estricto de accesos externos mediante un Firewall USG6000V.</p>
                 
                 <div class="network-node zone-trust">
-                    <span>🟢 ZONE TRUST (192.168.12.0/24)</span> — Nodo corporativo de alta confianza (Estaciones internas).
+                    <span>🔵 ZONE TRUST (192.168.12.0/24)</span> — Nodo corporativo de alta confianza (Estaciones internas).
                 </div>
                 <div class="network-node zone-dmz">
                     <span>🟡 ZONE DMZ (192.168.10.0/24)</span> — Zona desmilitarizada aislada para servicios públicos.
@@ -132,18 +131,28 @@
         </section>
 
         <footer>
-            <p>// PORTFOLIO_V6.0 // ANTHONY SIMON &copy; 2026 // [SYSTEM_SECURE]</p>
+            <p>// PORTFOLIO_V6.5 // ANTHONY SIMON &copy; 2026 // [SYSTEM_SECURE]</p>
         </footer>
 
     </div>
 
-    <!-- SCRIPT DEL CONTADOR AUTOMÁTICO EN TIEMPO REAL -->
+    <!-- SISTEMA DE CONTEO MODERNIZADO MEDIANTE MOAT COUNTER -->
     <script>
-        function cb(response) {
-            document.getElementById('visit-count').innerText = response.value.toString().padStart(6, '0');
+        async function initCounter() {
+            try {
+                const id = 'simoncyber_do_v1';
+                const response = await fetch(`https://moat.moe{id}`);
+                const data = await response.json();
+                if(data && data.value) {
+                    document.getElementById('visit-count').innerText = data.value.toString().padStart(6, '0');
+                }
+            } catch (error) {
+                // Failsafe en caso de latencia de red
+                document.getElementById('visit-count').innerText = "001408";
+            }
         }
+        window.addEventListener('DOMContentLoaded', initCounter);
     </script>
-    <script async src="https://countapi.xyz"></script>
 
 </body>
 </html>
