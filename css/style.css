@@ -1,21 +1,22 @@
 :root {
-    --bg-base: #080c14;
-    --panel-bg: rgba(17, 24, 39, 0.6);
-    --panel-border: rgba(255, 255, 255, 0.08);
-    --cyber-glow: #00ff66;
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
+    --bg-base: #0b0f17;
+    --panel-bg: rgba(18, 24, 38, 0.7);
+    --panel-border: rgba(255, 255, 255, 0.06);
+    --cyber-glow: #0077ff; /* Cambio a Azul Industrial de Misión Crítica */
+    --industrial-steel: #ced4da;
+    --text-primary: #f8f9fa;
+    --text-secondary: #adb5bd;
 }
 
 body {
-    /* Cambio a tipografía sans-serif de alta ingeniería visual */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-base);
+    /* Fondo que simula un panel de acero perforado de un rack de servidores */
     background-image: 
-        radial-gradient(rgba(0, 255, 102, 0.15) 1px, transparent 0),
-        radial-gradient(rgba(0, 255, 102, 0.05) 2px, transparent 0);
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px;
+        radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0),
+        radial-gradient(rgba(0, 119, 255, 0.03) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
     color: var(--text-primary);
     margin: 0;
     padding: 0;
@@ -29,21 +30,22 @@ body {
     box-sizing: border-box;
 }
 
-/* Header con Glassmorphism moderno */
+/* Header Estilo Centro de Control Industrial */
 header {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
-    border-radius: 20px;
+    border-top: 4px solid var(--cyber-glow); /* Barra superior de estado */
+    border-radius: 12px;
     padding: 40px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 50px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
 .header-content {
@@ -52,30 +54,31 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     margin: 0;
     font-weight: 800;
     letter-spacing: -0.5px;
+    color: var(--text-primary);
 }
 
 header h2 {
     color: var(--cyber-glow);
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin: 10px 0 25px 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
+    letter-spacing: 3px;
+    font-weight: 700;
 }
 
-/* CAJA DEL CONTADOR ESTILO LED COMPACTO */
+/* PANEL DEL CONTADOR EN AZUL INDUSTRIAL MATE */
 .visitor-counter-box {
-    background: #022c22;
-    border: 1px solid rgba(0, 255, 102, 0.3);
-    padding: 15px 25px;
-    border-radius: 12px;
+    background: #07152e;
+    border: 1px solid rgba(0, 119, 255, 0.25);
+    padding: 16px 24px;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 0 20px rgba(0, 255, 102, 0.1);
-    min-width: 140px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    min-width: 150px;
 }
 
 .counter-label {
@@ -83,17 +86,18 @@ header h2 {
     font-size: 0.65rem;
     color: var(--cyber-glow);
     letter-spacing: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-family: monospace;
+    font-weight: bold;
 }
 
 .counter-number {
     font-family: monospace;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: bold;
-    color: var(--cyber-glow);
-    letter-spacing: 3px;
-    text-shadow: 0 0 10px rgba(0, 255, 102, 0.8);
+    color: #e6f1ff;
+    letter-spacing: 4px;
+    text-shadow: 0 0 12px rgba(0, 119, 255, 0.6);
 }
 
 .contact-links {
@@ -103,23 +107,24 @@ header h2 {
 }
 
 .btn {
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--industrial-steel);
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 11px 22px;
+    border-radius: 6px;
     border: 1px solid var(--panel-border);
     font-size: 0.8rem;
     font-weight: 600;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
     background: var(--cyber-glow);
-    color: #000;
+    color: #ffffff;
     border-color: var(--cyber-glow);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 255, 102, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 119, 255, 0.3);
 }
 
 section {
@@ -127,46 +132,46 @@ section {
 }
 
 h3 {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     color: var(--text-secondary);
     margin-bottom: 25px;
     display: flex;
     align-items: center;
     gap: 15px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 h3::after {
     content: '';
     flex-grow: 1;
     height: 1px;
-    background: var(--panel-border);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* Tarjetas Flotantes de Cristal Modernas */
+/* Tarjetas Blindadas de Estructura Industrial */
 .cyber-card {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
-    border-radius: 16px;
-    padding: 30px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    padding: 32px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease;
 }
 
 .cyber-card:hover {
-    border-color: rgba(0, 255, 102, 0.3);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 102, 0.05);
+    border-color: rgba(0, 119, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
 }
 
 .profile-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #d1d5db;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #e2e8f0;
     margin: 0 0 20px 0;
 }
 
@@ -178,24 +183,25 @@ h3::after {
 }
 
 .highlight-box {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--panel-border);
-    padding: 15px;
-    border-radius: 12px;
+    padding: 18px;
+    border-radius: 8px;
     text-align: center;
 }
 
 .highlight-box span {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--cyber-glow);
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .highlight-box small {
     color: var(--text-secondary);
     font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .cert-grid {
@@ -208,56 +214,64 @@ h3::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--panel-border);
-    padding: 16px 20px;
-    border-radius: 12px;
+    padding: 18px 22px;
+    border-radius: 8px;
     transition: all 0.2s ease;
 }
 
 .cert-item:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.01);
 }
 
 .cert-date {
-    color: var(--cyber-glow);
-    font-size: 0.75rem;
-    background: rgba(0, 255, 102, 0.08);
+    color: #ffffff;
+    font-size: 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
     padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: 600;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 24px;
 }
 
 .card-title {
     font-size: 1.1rem;
     font-weight: 700;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
 }
 
 .card-desc {
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin: 0 0 20px 0;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .badge {
-    background: rgba(255, 255, 255, 0.04);
-    color: #e5e7eb;
+    background: rgba(0, 119, 255, 0.04);
+    color: #b0d4ff;
     padding: 5px 12px;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 0.75rem;
     display: inline-block;
     margin: 4px 4px 0 0;
-    border: 1px solid var(--panel-border);
+    border: 1px solid rgba(0, 119, 255, 0.15);
+}
+
+.cyber-card:hover .badge {
+    background: rgba(0, 119, 255, 0.08);
+    border-color: rgba(0, 119, 255, 0.3);
 }
 
 .network-node {
@@ -267,13 +281,14 @@ h3::after {
     font-size: 0.9rem;
 }
 
-.zone-trust { border-left-color: #00ff66; }
-.zone-dmz { border-left-color: #ffcc00; }
-.zone-untrust { border-left-color: #ff0055; }
+/* Indicadores topológicos refinados */
+.zone-trust { border-left-color: #0055ff; }
+.zone-dmz { border-left-color: #e6b800; }
+.zone-untrust { border-left-color: #d90429; }
 
 .img-container {
     margin-top: 25px;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--panel-border);
 }
@@ -284,7 +299,7 @@ h3::after {
 }
 
 .img-error {
-    padding: 40px;
+    padding: 45px;
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.85rem;
@@ -292,11 +307,13 @@ h3::after {
 
 footer {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 90px;
     font-size: 0.75rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.5px;
 }
+
 @media (max-width: 600px) {
-    header { flex-direction: column; text-align: center; }
+    header { flex-direction: column; text-align: center; padding: 30px 20px; }
     .visitor-counter-box { width: 100%; box-sizing: border-box; }
 }
