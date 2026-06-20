@@ -3,140 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Simon | Cyber Security Architect</title>
+    <title>Anthony Simon | Cyber Security Command Center</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container">
+    <!-- CONTROL DESK WRAPPER -->
+    <div class="dashboard-wrapper">
         
-        <!-- HEADER INDUSTRIAL -->
-        <header>
-            <div class="header-content">
-                <h1>Anthony Simon</h1>
-                <h2>Especialista en Ciberseguridad</h2>
-                <div class="contact-links">
-                    <a href="https://simoncyber.do" class="btn" target="_blank">🌐 CORE_WEB</a>
-                    <a href="https://wa.me" class="btn" target="_blank">💬 WHATSAPP</a>
-                    <a href="https://t.me" class="btn" target="_blank">✈️ TELEGRAM</a>
-                </div>
+        <!-- TOP STATUS BAR -->
+        <div class="top-status-bar">
+            <div class="status-node">
+                <span class="pulse-indicator"></span>
+                <span>SEC_NODE: ONLINE</span>
             </div>
-            
-            <!-- PANEL CONTADOR DE VISITAS ESTABLE -->
+            <div class="location-node">LOC: DOMINICAN_REPUBLIC // IN_BOUND</div>
             <div class="visitor-counter-box">
-                <span class="counter-label">ANÁLISIS_TRÁFICO</span>
+                <span class="counter-label">ANÁLISIS_TRÁFICO:</span>
                 <span class="counter-number" id="visit-count">000000</span>
             </div>
-        </header>
+        </div>
 
-        <!-- SOBRE MÍ -->
-        <section id="about-me">
-            <h3> INFRAESTRUCTURA_HUMANA (SOBRE_MÍ)</h3>
-            <div class="cyber-card profile-text">
-                <p>Saludos. Soy <strong>Anthony Simon</strong>, especialista en seguridad informática radicado en la República Dominicana. Mi enfoque técnico se centra en el diseño de arquitecturas de red resilientes, la mitigación de vectores de ataque perimetrales y la administración avanzada de firewalls de próxima generación.</p>
+        <div class="dashboard-layout">
+            
+            <!-- PANEL LATERAL: PERFIL Y CONTACTO -->
+            <aside class="sidebar-panel">
+                <div class="operator-profile">
+                    <div class="avatar-placeholder">// SIMON_CYBER</div>
+                    <h1>Anthony Simon</h1>
+                    <h2>Security Architect</h2>
+                </div>
                 
-                <p>A lo largo de mi trayectoria académica y profesional, he sido certificado por academias líderes globales como <strong>Huawei ICT Academy</strong>, además de complementar mis capacidades técnicas de defensa con programas avanzados en habilidades de liderazgo avalados por el <strong>Banco Interamericano de Desarrollo (BID)</strong> e <strong>INDOTEL</strong>.</p>
+                <div class="comms-panel">
+                    <span class="panel-tag">CANALES_COMUNICACIÓN</span>
+                    <a href="https://simoncyber.do" class="nav-btn" target="_blank">🌐 CORE_WEB</a>
+                    <a href="https://wa.me" class="nav-btn" target="_blank">💬 WHATSAPP</a>
+                    <a href="https://t.me" class="nav-btn" target="_blank">✈️ TELEGRAM</a>
+                </div>
+
+                <div class="telemetry-box">
+                    <span class="panel-tag">METRÍCAS_RESUMEN</span>
+                    <div class="tel-row"><span>CAPACITACIÓN:</span> <strong>+500h</strong></div>
+                    <div class="tel-row"><span>AMENAZAS_MIT:</span> <strong>100%</strong></div>
+                    <div class="tel-row"><span>HUAWEI_ID:</span> <strong>HCIA_SEC</strong></div>
+                </div>
+            </aside>
+
+            <!-- CONTENEDOR CENTRAL: DASHBOARD CARDS -->
+            <main class="main-dashboard">
                 
-                <p>Creo firmemente que la ciberseguridad moderna no solo requiere un control estricto de las configuraciones de red, sino también una documentación impecable y la capacidad de guiar a células de trabajo bajo escenarios de alta presión corporativa.</p>
-                
-                <div class="profile-highlights">
-                    <div class="highlight-box">
-                        <span>+500h</span>
-                        <small>Capacitación Técnica</small>
+                <!-- SECCIÓN: OPERATOR PROFILE -->
+                <section class="dashboard-section">
+                    <div class="section-header">🔍 OVERVIEW_PERFIL_HUMANO</div>
+                    <div class="cyber-card">
+                        <p>Especialista en ciberseguridad enfocado en la mitigación técnica de vectores de ataque perimetrales y el despliegue de infraestructuras críticas resilientes. Capacitado bajo rigurosos estándares globales de **Huawei ICT Academy** y entrenado en la coordinación táctica de células críticas organizacionales bajo programas avalados por el **BID** e **INDOTEL**.</p>
                     </div>
-                    <div class="highlight-box">
-                        <span>100%</span>
-                        <small>Enfoque Mitigación</small>
+                </section>
+
+                <!-- SECCIÓN: GRID DE CAPACIDADES -->
+                <section class="dashboard-section">
+                    <div class="section-header">⚙️ NÚCLEOS_OPERATIVOS_ACTIVOS</div>
+                    <div class="grid-dashboard">
+                        <div class="cyber-card tile">
+                            <span class="tile-icon">🛡️</span>
+                            <h3>SEGURIDAD DE REDES</h3>
+                            <p>Segmentación criptográfica y control granular de políticas perimetrales de tráfico.</p>
+                            <div class="badge-row">
+                                <span class="badge">NGFW</span>
+                                <span class="badge">ACL_Control</span>
+                            </div>
+                        </div>
+                        <div class="cyber-card tile">
+                            <span class="tile-icon">👥</span>
+                            <h3>LIDERAZGO TÉCNICO</h3>
+                            <p>Gestión operativa y análisis de riesgos en infraestructuras críticas corporativas.</p>
+                            <div class="badge-row">
+                                <span class="badge">Gestión_SOC</span>
+                                <span class="badge">Reportes</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="highlight-box">
-                        <span>Huawei</span>
-                        <small>HCIA Certified</small>
+                </section>
+
+                <!-- SECCIÓN: CERTIFICACIONES -->
+                <section class="dashboard-section">
+                    <div class="section-header">📑 REGISTRO_CREDENCIALES_VERIFICADAS</div>
+                    <div class="cyber-card list-container">
+                        <div class="list-item">
+                            <div class="item-info"><strong>HCIA-Security V4.0</strong><br><small>Huawei ICT Academy</small></div>
+                            <span class="item-tag security">MAY 2026</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-info"><strong>Ciberseguridad - Nivel Intermedio (80h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
+                            <span class="item-tag security">FEB 2026</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-info"><strong>Habilidades de Liderazgo de Equipos (32h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
+                            <span class="item-tag management">FEB 2026</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-info"><strong>Creación de Contenidos para YouTube (200h)</strong><br><small>INFOTEP</small></div>
+                            <span class="item-tag office">SEP 2025</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-info"><strong>Operaciones Básicas de Programas de Oficina (180h)</strong><br><small>INFOTEP</small></div>
+                            <span class="item-tag office">AGO 2025</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- CERTIFICACIONES -->
-        <section id="credentials">
-            <h3> CREDENCIALES_VERIFICADAS</h3>
-            <div class="cyber-card cert-grid">
-                <div class="cert-item">
-                    <div><strong>HCIA-Security V4.0</strong><br><small>Huawei ICT Academy</small></div>
-                    <div class="cert-date">MAY 2026</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Ciberseguridad - Nivel Intermedio (80h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
-                    <div class="cert-date">FEB 2026</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Habilidades de Liderazgo de Equipos (32h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
-                    <div class="cert-date">FEB 2026</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Creación de Contenidos para YouTube (200h)</strong><br><small>INFOTEP</small></div>
-                    <div class="cert-date">SEP 2025</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Operaciones Básicas de Programas de Oficina (180h)</strong><br><small>INFOTEP</small></div>
-                    <div class="cert-date">AGO 2025</div>
-                </div>
-            </div>
-        </section>
+                <!-- SECCIÓN: SISTEMAS DESPLEGADOS -->
+                <section class="dashboard-section">
+                    <div class="section-header">📊 MONITOREO_TOPOLOGÍAS_DESPLEGADAS</div>
+                    <div class="cyber-card">
+                        <h3>LAB_REF: Arquitectura Perimetral Fortificada (Huawei eNSP)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">Segmentación perimetral y aislamiento táctico mediante Firewall USG6000V en entornos de simulación avanzada empresarial.</p>
+                        
+                        <div class="node-status-grid">
+                            <div class="node-stat trust"><span>TRUST_ZONE</span> <code>192.168.12.0/24</code></div>
+                            <div class="node-stat dmz"><span>DMZ_ZONE</span> <code>192.168.10.0/24</code></div>
+                            <div class="node-stat untrust"><span>UNTRUST_ZONE</span> <code>40.180.10.0/24</code></div>
+                        </div>
 
-        <!-- CAPACIDADES -->
-        <section id="capabilities">
-            <h3> CAPACIDADES_TECNICAS</h3>
-            <div class="grid">
-                <div class="cyber-card">
-                    <strong class="card-title">🛡️ SEGURIDAD DE REDES</strong>
-                    <p class="card-desc">Segmentación criptográfica perimetral, administración estricta de políticas de tráfico en Firewalls de Próxima Generación y mitigación activa de riesgos corporativos.</p>
-                    <span class="badge">Next-Gen Firewalls</span>
-                    <span class="badge">Segmentación de Zonas</span>
-                    <span class="badge">Control ACL</span>
-                </div>
-                <div class="cyber-card">
-                    <strong class="card-title">👥 LIDERAZGO OPERATIVO</strong>
-                    <p class="card-desc">Coordinación estratégica de células técnicas en entornos críticos, asegurando control organizativo y estructuración analítica de reportes ejecutivos.</p>
-                    <span class="badge">Liderazgo Técnico</span>
-                    <span class="badge">Análisis de Riesgos</span>
-                    <span class="badge">Reportes Técnicos</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- SISTEMAS DESPLEGADOS -->
-        <section id="systems">
-            <h3> SISTEMAS_DESPLEGADOS</h3>
-            <div class="cyber-card">
-                <strong class="card-title">LAB_REF: Arquitectura Perimetral Fortificada (eNSP)</strong>
-                <p class="card-desc" style="margin-top: 10px;">Despliegue y simulación topológica completa en la plataforma Huawei eNSP para control y aislamiento estricto de accesos externos mediante un Firewall USG6000V.</p>
-                
-                <div class="network-node zone-trust">
-                    <span>🔵 ZONE TRUST (192.168.12.0/24)</span> — Nodo corporativo de alta confianza (Estaciones internas).
-                </div>
-                <div class="network-node zone-dmz">
-                    <span>🟡 ZONE DMZ (192.168.10.0/24)</span> — Zona desmilitarizada aislada para servicios públicos.
-                </div>
-                <div class="network-node zone-untrust">
-                    <span>🔴 ZONE UNTRUST (40.180.10.0/24)</span> — Red externa no confiable auditada.
-                </div>
-
-                <div class="img-container">
-                    <img src="assets/ensp.jpg" alt="Topología eNSP - Anthony Simon" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="img-error">
-                        ⚠️ SISTEMA MULTIMEDIA EN ESPERA (Sube tu captura dentro de la carpeta 'assets' con el nombre 'ensp.jpg')
+                        <div class="img-container">
+                            <img src="assets/ensp.jpg" alt="Topología eNSP - Anthony Simon" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="img-error">
+                                ⚠️ WAITING_IMAGE_FEED (assets/ensp.jpg)
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
+            </main>
+        </div>
+        
         <footer>
-            <p>// PORTFOLIO_V6.5 // ANTHONY SIMON &copy; 2026 // [SYSTEM_SECURE]</p>
+            // SYSTEM_DASHBOARD_V7.0 // ANTHONY SIMON &copy; 2026 // ALL_RIGHTS_RESERVED
         </footer>
-
     </div>
 
-    <!-- SISTEMA DE CONTEO MODERNIZADO MEDIANTE MOAT COUNTER -->
+    <!-- MOAT COUNTER SCRIPT -->
     <script>
         async function initCounter() {
             try {
@@ -147,12 +153,10 @@
                     document.getElementById('visit-count').innerText = data.value.toString().padStart(6, '0');
                 }
             } catch (error) {
-                // Failsafe en caso de latencia de red
                 document.getElementById('visit-count').innerText = "001408";
             }
         }
         window.addEventListener('DOMContentLoaded', initCounter);
     </script>
-
 </body>
 </html>
