@@ -1,0 +1,292 @@
+:root {
+    --bg-base: #06090f;
+    --cyber-glow: #00ff66;
+    --cyber-alert: #ff0055;
+    --panel-bg: rgba(22, 27, 34, 0.45);
+    --panel-border: rgba(48, 54, 61, 0.8);
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --neo-inset: inset 2px 2px 6px rgba(0,0,0,0.9), inset -2px -2px 6px rgba(255,255,255,0.03);
+    --neo-out: 6px 6px 18px rgba(0,0,0,0.75), -2px -2px 12px rgba(255,255,255,0.01);
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-base);
+    background-image: 
+        linear-gradient(rgba(0, 255, 102, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 102, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Efecto Escáner */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--cyber-glow), transparent);
+    animation: scan 4s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+header {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--neo-out);
+    backdrop-filter: blur(12px);
+    position: relative;
+    margin-bottom: 40px;
+}
+
+header::after {
+    content: 'SECURE_NODE_ONLINE';
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 0.65rem;
+    color: var(--cyber-glow);
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 12px rgba(0, 255, 102, 0.35);
+}
+
+header h2 {
+    color: var(--cyber-glow);
+    font-size: 1.1rem;
+    margin: 15px 0 25px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: var(--panel-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--panel-border);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: var(--neo-out);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    border-color: var(--cyber-glow);
+    color: var(--cyber-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.3);
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cyber-glow);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h3::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--panel-border), transparent);
+}
+
+.cyber-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--neo-out);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cyber-card:hover {
+    border-color: rgba(0, 255, 102, 0.4);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 255, 102, 0.05);
+}
+
+.profile-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin: 0 0 15px 0;
+}
+
+.profile-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.highlight-box {
+    background: rgba(13, 17, 23, 0.7);
+    border: 1px solid var(--panel-border);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--neo-inset);
+}
+
+.highlight-box span {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--cyber-glow);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.highlight-box small {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+.cert-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(13, 17, 23, 0.5);
+    border: 1px solid var(--panel-border);
+    padding: 14px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.cert-item:hover {
+    border-color: var(--cyber-glow);
+    background: rgba(0, 255, 102, 0.02);
+}
+
+.cert-date {
+    color: var(--cyber-glow);
+    font-size: 0.75rem;
+    background: rgba(0, 255, 102, 0.06);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 102, 0.15);
+    white-space: nowrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card-title {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    display: block;
+}
+
+.card-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 10px 0 15px 0;
+    line-height: 1.6;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    display: inline-block;
+    margin: 4px 4px 0 0;
+    border: 1px solid var(--panel-border);
+}
+
+.network-node {
+    border-left: 3px solid var(--cyber-glow);
+    padding-left: 15px;
+    margin: 12px 0;
+    font-size: 0.85rem;
+}
+
+.zone-trust { border-left-color: #00ff66; }
+.zone-dmz { border-left-color: #ffcc00; }
+.zone-untrust { border-left-color: #ff0055; }
+
+.img-container {
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--panel-border);
+    background: #000;
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+    opacity: 0.85;
+}
+
+.img-error {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
