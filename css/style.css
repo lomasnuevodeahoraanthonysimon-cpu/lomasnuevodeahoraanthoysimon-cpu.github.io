@@ -1,43 +1,25 @@
 :root {
-    --bg-base: #030712;
-    --panel-bg: rgba(9, 13, 24, 0.7);
-    --panel-border: #00ff66;
+    --bg-base: #080c14;
+    --panel-bg: rgba(17, 24, 39, 0.6);
+    --panel-border: rgba(255, 255, 255, 0.08);
     --cyber-glow: #00ff66;
-    --text-primary: #ffffff;
+    --text-primary: #f3f4f6;
     --text-secondary: #9ca3af;
-    --neon-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    /* Cambio a tipografía sans-serif de alta ingeniería visual */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-base);
-    /* Efecto de fondo de rejilla de alta tecnología */
     background-image: 
-        linear-gradient(rgba(0, 255, 102, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 102, 0.04) 1px, transparent 1px);
-    background-size: 35px 35px;
+        radial-gradient(rgba(0, 255, 102, 0.15) 1px, transparent 0),
+        radial-gradient(rgba(0, 255, 102, 0.05) 2px, transparent 0);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
     color: var(--text-primary);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-}
-
-/* Escáner láser horizontal en la parte superior */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--cyber-glow), transparent);
-    animation: laserScan 5s linear infinite;
-    z-index: 1000;
-}
-
-@keyframes laserScan {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
 }
 
 .container {
@@ -47,283 +29,274 @@ body::before {
     box-sizing: border-box;
 }
 
-/* Encabezado con estética de Terminal Militarizada */
+/* Header con Glassmorphism moderno */
 header {
     background: var(--panel-bg);
-    border: 2px solid rgba(0, 255, 102, 0.3);
-    border-radius: 4px;
-    padding: 50px 30px;
-    text-align: center;
-    box-shadow: var(--neon-shadow);
-    backdrop-filter: blur(15px);
-    position: relative;
+    border: 1px solid var(--panel-border);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
     margin-bottom: 50px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-header::after {
-    content: '[SYS_STATUS: ACTIVE]';
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 0.7rem;
-    color: var(--cyber-glow);
-    letter-spacing: 2px;
-    font-weight: bold;
+.header-content {
+    flex: 1;
+    min-width: 280px;
 }
 
 header h1 {
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: var(--text-primary);
-    text-shadow: 0 0 20px rgba(0, 255, 102, 0.6);
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 header h2 {
     color: var(--cyber-glow);
-    font-size: 1.1rem;
-    margin: 20px 0 35px 0;
-    letter-spacing: 6px;
+    font-size: 1rem;
+    margin: 10px 0 25px 0;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* CAJA DEL CONTADOR ESTILO LED COMPACTO */
+.visitor-counter-box {
+    background: #022c22;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.1);
+    min-width: 140px;
+}
+
+.counter-label {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--cyber-glow);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-family: monospace;
+}
+
+.counter-number {
+    font-family: monospace;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cyber-glow);
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.8);
 }
 
 .contact-links {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
-/* Botones con Interacción de Brillo Táctico */
 .btn {
-    background: transparent;
-    color: var(--cyber-glow);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
     text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 4px;
-    border: 1px solid var(--cyber-glow);
-    font-size: 0.85rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--panel-border);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover {
-    background: rgba(0, 255, 102, 0.1);
-    box-shadow: 0 0 25px rgba(0, 255, 102, 0.5);
-    transform: translateY(-3px);
+    background: var(--cyber-glow);
+    color: #000;
+    border-color: var(--cyber-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 255, 102, 0.2);
 }
 
 section {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
-/* Separadores de sección con líneas de carga */
 h3 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--cyber-glow);
-    margin-bottom: 30px;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
     gap: 15px;
+    font-weight: 700;
 }
 
 h3::after {
     content: '';
     flex-grow: 1;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(0, 255, 102, 0.4), transparent);
+    height: 1px;
+    background: var(--panel-border);
 }
 
-/* Tarjetas Modulares Neumórficas de Ciberseguridad */
+/* Tarjetas Flotantes de Cristal Modernas */
 .cyber-card {
     background: var(--panel-bg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 4px solid rgba(0, 255, 102, 0.4);
-    border-radius: 4px;
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* Animación de encendido de tarjeta al pasar el mouse */
 .cyber-card:hover {
-    border-color: var(--cyber-glow);
-    border-left-width: 4px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 255, 102, 0.15);
-    transform: translateY(-2px);
+    border-color: rgba(0, 255, 102, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 102, 0.05);
 }
 
 .profile-text p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: #e5e7eb;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d1d5db;
     margin: 0 0 20px 0;
 }
 
-/* Indicadores Analíticos de Rendimiento */
 .profile-highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
     margin-top: 30px;
 }
 
 .highlight-box {
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--panel-border);
+    padding: 15px;
+    border-radius: 12px;
     text-align: center;
-    transition: border-color 0.3s;
-}
-
-.cyber-card:hover .highlight-box {
-    border-color: rgba(0, 255, 102, 0.2);
 }
 
 .highlight-box span {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: var(--cyber-glow);
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .highlight-box small {
     color: var(--text-secondary);
     font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .cert-grid {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
-/* Filas de la lista de Certificaciones */
 .cert-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 18px 24px;
-    border-radius: 4px;
-    transition: all 0.25s ease;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--panel-border);
+    padding: 16px 20px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
 }
 
 .cert-item:hover {
-    border-color: rgba(0, 255, 102, 0.5);
-    background: rgba(0, 255, 102, 0.03);
-    padding-left: 30px;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .cert-date {
     color: var(--cyber-glow);
     font-size: 0.75rem;
     background: rgba(0, 255, 102, 0.08);
-    padding: 5px 12px;
-    border-radius: 2px;
-    border: 1px solid rgba(0, 255, 102, 0.2);
-    white-space: nowrap;
-    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 20px;
 }
 
 .card-title {
-    color: var(--text-primary);
     font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-weight: 700;
     display: block;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .card-desc {
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     margin: 0 0 20px 0;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-/* Etiquetas Tecnológicas Autoluminosas */
 .badge {
-    background: rgba(255, 255, 255, 0.03);
-    color: #9ca3af;
+    background: rgba(255, 255, 255, 0.04);
+    color: #e5e7eb;
     padding: 5px 12px;
-    border-radius: 2px;
-    font-size: 0.7rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
     display: inline-block;
-    margin: 6px 6px 0 0;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.2s;
-}
-
-.cyber-card:hover .badge {
-    border-color: rgba(0, 255, 102, 0.3);
-    color: var(--cyber-glow);
-    background: rgba(0, 255, 102, 0.02);
+    margin: 4px 4px 0 0;
+    border: 1px solid var(--panel-border);
 }
 
 .network-node {
     border-left: 3px solid var(--cyber-glow);
-    padding-left: 18px;
-    margin: 15px 0;
-    font-size: 0.85rem;
-    line-height: 1.6;
+    padding-left: 15px;
+    margin: 12px 0;
+    font-size: 0.9rem;
 }
 
-/* Modificadores de color específicos de topología */
 .zone-trust { border-left-color: #00ff66; }
 .zone-dmz { border-left-color: #ffcc00; }
 .zone-untrust { border-left-color: #ff0055; }
 
 .img-container {
-    margin-top: 30px;
-    border-radius: 4px;
+    margin-top: 25px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(0, 255, 102, 0.2);
-    background: #000;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--panel-border);
 }
 
 .img-container img {
     width: 100%;
     display: block;
-    opacity: 0.75;
-    transition: opacity 0.3s ease;
-}
-
-.img-container:hover img {
-    opacity: 1;
 }
 
 .img-error {
-    padding: 50px;
+    padding: 40px;
     text-align: center;
     color: var(--text-secondary);
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
 }
 
 footer {
     text-align: center;
-    margin-top: 100px;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.3);
-    letter-spacing: 2px;
+    margin-top: 80px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+@media (max-width: 600px) {
+    header { flex-direction: column; text-align: center; }
+    .visitor-counter-box { width: 100%; box-sizing: border-box; }
 }
