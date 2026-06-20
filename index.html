@@ -8,6 +8,9 @@
 </head>
 <body>
 
+    <!-- LIENZO INTERACTIVO PARA EL MOTOR GRÁFICO MATRIX -->
+    <canvas id="cyberGridCanvas"></canvas>
+
     <div class="dashboard-wrapper">
         
         <!-- TOP STATUS BAR -->
@@ -168,16 +171,15 @@
         </div>
         
         <footer>
-            // SYSTEM_DASHBOARD_V7.5 // ANTHONY SIMON &copy; 2026 // ALL_RIGHTS_RESERVED
+            // SYSTEM_DASHBOARD_V8.0 // ANTHONY SIMON &copy; 2026 // ALL_RIGHTS_RESERVED
         </footer>
     </div>
 
     <!-- SCRIPTS EN TIEMPO REAL -->
     <script>
-        // 1. Script del Contador Estable (Moat Counter)
-        async function initCounter() {
-            try {
-                const id = 'simoncyber_do_v1';
-                const response = await fetch(`https://moat.moe{id}`);
-                const data = await response.json();
-                if(data && data.value) {
+        // 1. Script de la Matriz Cinética por Hardware (Canvas Background)
+        const canvas = document.getElementById('cyberGridCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
