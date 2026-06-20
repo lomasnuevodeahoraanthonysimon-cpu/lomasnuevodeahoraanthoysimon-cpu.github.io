@@ -4,269 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony Simon | Cyber Security Architect</title>
-    <style>
-        :root {
-            --bg-base: #06090f;
-            --cyber-glow: #00ff66;
-            --cyber-alert: #ff0055;
-            --panel-bg: rgba(22, 27, 34, 0.4);
-            --panel-border: rgba(48, 54, 61, 0.7);
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --neo-inset: inset 2px 2px 5px rgba(0,0,0,0.8), inset -2px -2px 5px rgba(255,255,255,0.05);
-            --neo-out: 5px 5px 15px rgba(0,0,0,0.7), -2px -2px 10px rgba(255,255,255,0.02);
-        }
-
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: var(--bg-base);
-            background-image: 
-                linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px);
-            background-size: 25px 25px;
-            color: var(--text-primary);
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--cyber-glow), transparent);
-            animation: scan 4s linear infinite;
-            z-index: 1000;
-        }
-
-        @keyframes scan {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px 20px;
-            box-sizing: border-box;
-        }
-
-        header {
-            background: var(--panel-bg);
-            border: 1px solid var(--panel-border);
-            border-radius: 16px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: var(--neo-out);
-            backdrop-filter: blur(12px);
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        header::after {
-            content: 'SECURE_NODE_ONLINE';
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 0.65rem;
-            color: var(--cyber-glow);
-            letter-spacing: 2px;
-            opacity: 0.7;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
-        }
-
-        header h2 {
-            color: var(--cyber-glow);
-            font-size: 1.2rem;
-            margin: 15px 0 30px 0;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            background: var(--panel-bg);
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            border: 1px solid var(--panel-border);
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: var(--neo-out);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn:hover {
-            border-color: var(--cyber-glow);
-            color: var(--cyber-glow);
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
-        }
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--cyber-glow);
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        h3::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--panel-border), transparent);
-        }
-
-        .cyber-card {
-            background: var(--panel-bg);
-            border: 1px solid var(--panel-border);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: var(--neo-out);
-            backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
-        }
-
-        .cyber-card:hover {
-            border-color: rgba(0, 255, 102, 0.5);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 102, 0.1);
-        }
-
-        /* Estilos específicos para la sección Sobre Mí */
-        .profile-text p {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--text-primary);
-            margin-bottom: 15px;
-        }
-
-        .profile-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .highlight-box {
-            background: rgba(13, 17, 23, 0.6);
-            border: 1px solid var(--panel-border);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .highlight-box span {
-            display: block;
-            font-size: 1.5rem;
-            color: var(--cyber-glow);
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .cert-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .cert-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(13, 17, 23, 0.6);
-            border: 1px solid var(--panel-border);
-            padding: 15px 20px;
-            border-radius: 8px;
-        }
-
-        .cert-date {
-            color: var(--cyber-glow);
-            font-size: 0.8rem;
-            background: rgba(0, 255, 102, 0.08);
-            padding: 4px 10px;
-            border-radius: 4px;
-            border: 1px solid rgba(0, 255, 102, 0.2);
-            white-space: nowrap;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .badge {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            display: inline-block;
-            margin: 5px 5px 0 0;
-            border: 1px solid var(--panel-border);
-        }
-
-        .network-node {
-            border-left: 3px solid var(--cyber-glow);
-            padding-left: 15px;
-            margin: 15px 0;
-        }
-
-        .img-container {
-            margin-top: 25px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--panel-border);
-            background: #000;
-        }
-
-        .img-container img {
-            width: 100%;
-            display: block;
-            opacity: 0.85;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            letter-spacing: 1px;
-        }
-    </style>
+    <!-- Vinculación limpia de los estilos externos para no romper el margen -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div class="container">
         
-        <!-- HEADER -->
+        <!-- CONTROL_HEADER -->
         <header>
             <h1>Anthony Simon</h1>
             <h2>// CYBER_SECURITY_SPECIALIST</h2>
@@ -277,7 +22,7 @@
             </div>
         </header>
 
-        <!-- NUEVA SECCIÓN: SOBRE MÍ (EL APARTADO DE REFERENCIA) -->
+        <!-- INFRAESTRUCTURA_HUMANA (SOBRE MÍ) -->
         <section id="about-me">
             <h3> INFRAESTRUCTURA_HUMANA (SOBRE_MÍ)</h3>
             <div class="cyber-card profile-text">
@@ -285,15 +30,105 @@
                 
                 <p>A lo largo de mi trayectoria académica y profesional, he sido certificado por academias líderes globales como <strong>Huawei ICT Academy</strong>, además de complementar mis capacidades técnicas de defensa con programas avanzados en habilidades de liderazgo avalados por el <strong>Banco Interamericano de Desarrollo (BID)</strong> e <strong>INDOTEL</strong>.</p>
                 
-                <p>Creo firmemente que la ciberseguridad moderna no solo requiere un control estricto de las configuraciones de red, sino también una documentación impecable y la capacidad de guiar a células de trabajo bajo escenarios de alta presión corporativa. Mi objetivo es asegurar la continuidad operativa de las organizaciones protegiendo sus activos más críticos.</p>
+                <p>Creo firmemente que la ciberseguridad moderna no solo requiere un control estricto de las configuraciones de red, sino también una documentación impecable y la capacidad de guiar a células de trabajo bajo escenarios de alta presión corporativa.</p>
                 
                 <div class="profile-highlights">
                     <div class="highlight-box">
                         <span>+500h</span>
-                        <small style="color: var(--text-secondary);">Capacitación Técnica Avalada</small>
+                        <small>Capacitación Técnica</small>
                     </div>
                     <div class="highlight-box">
                         <span>100%</span>
-                        <small style="color: var(--text-secondary);">Enfoque en Mitigación</small>
+                        <small>Enfoque Mitigación</small>
                     </div>
                     <div class="highlight-box">
+                        <span>Huawei</span>
+                        <small>HCIA Certified</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREDENCIALES_VERIFICADAS (CERTIFICACIONES) -->
+        <section id="credentials">
+            <h3> CREDENCIALES_VERIFICADAS</h3>
+            <div class="cyber-card cert-grid">
+                <div class="cert-item">
+                    <div><strong>HCIA-Security V4.0</strong><br><small>Huawei ICT Academy</small></div>
+                    <div class="cert-date">MAY 2026</div>
+                </div>
+                <div class="cert-item">
+                    <div><strong>Ciberseguridad - Nivel Intermedio (80h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
+                    <div class="cert-date">FEB 2026</div>
+                </div>
+                <div class="cert-item">
+                    <div><strong>Habilidades de Liderazgo de Equipos (32h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
+                    <div class="cert-date">FEB 2026</div>
+                </div>
+                <div class="cert-item">
+                    <div><strong>Creación de Contenidos para YouTube (200h)</strong><br><small>INFOTEP</small></div>
+                    <div class="cert-date">SEP 2025</div>
+                </div>
+                <div class="cert-item">
+                    <div><strong>Operaciones Básicas de Programas de Oficina (180h)</strong><br><small>INFOTEP</small></div>
+                    <div class="cert-date">AGO 2025</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPACIDADES_TECNICAS -->
+        <section id="capabilities">
+            <h3> CAPACIDADES_TECNICAS</h3>
+            <div class="grid">
+                <div class="cyber-card">
+                    <strong class="card-title">🛡️ SEGURIDAD DE REDES</strong>
+                    <p class="card-desc">Segmentación criptográfica perimetral, administración estricta de políticas de tráfico en Firewalls de Próxima Generación y mitigación activa de riesgos corporativos.</p>
+                    <span class="badge">Next-Gen Firewalls</span>
+                    <span class="badge">Segmentación de Zonas</span>
+                    <span class="badge">Control ACL</span>
+                </div>
+                <div class="cyber-card">
+                    <strong class="card-title">👥 LIDERAZGO OPERATIVO</strong>
+                    <p class="card-desc">Coordinación estratégica de células técnicas en entornos críticos, asegurando control organizativo y estructuración analítica de reportes ejecutivos.</p>
+                    <span class="badge">Liderazgo Técnico</span>
+                    <span class="badge">Análisis de Riesgos</span>
+                    <span class="badge">Reportes Técnicos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SISTEMAS_DESPLEGADOS -->
+        <section id="systems">
+            <h3> SISTEMAS_DESPLEGADOS</h3>
+            <div class="cyber-card">
+                <strong class="card-title">LAB_REF: Arquitectura Perimetral Fortificada (eNSP)</strong>
+                <p class="card-desc" style="margin-top: 10px;">Despliegue y simulación topológica completa en la plataforma Huawei eNSP para control y aislamiento estricto de accesos externos mediante un Firewall USG6000V.</p>
+                
+                <div class="network-node zone-trust">
+                    <span>🟢 ZONE TRUST (192.168.12.0/24)</span> — Nodo corporativo de alta confianza (Estaciones internas).
+                </div>
+                <div class="network-node zone-dmz">
+                    <span>🟡 ZONE DMZ (192.168.10.0/24)</span> — Zona desmilitarizada aislada para servicios públicos.
+                </div>
+                <div class="network-node zone-untrust">
+                    <span>🔴 ZONE UNTRUST (40.180.10.0/24)</span> — Red externa no confiable auditada.
+                </div>
+
+                <div class="img-container">
+                    <!-- Ruta corregida apuntando a la carpeta de recursos de manera profesional -->
+                    <img src="assets/ensp.jpg" alt="Topología eNSP - Anthony Simon" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="img-error">
+                        ⚠️ SISTEMA MULTIMEDIA EN ESPERA (Sube tu captura dentro de la carpeta 'assets' con el nombre 'ensp.jpg')
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>// PORTFOLIO_V5.0 // ANTHONY SIMON &copy; 2026 // [SYSTEM_SECURE]</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
