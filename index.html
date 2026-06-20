@@ -1,28 +1,36 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony Simon | Cyber Security Architect</title>
-    <!-- Vinculación limpia de los estilos externos para no romper el margen -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div class="container">
         
-        <!-- CONTROL_HEADER -->
+        <!-- HEADER PRINCIPAL -->
         <header>
-            <h1>Anthony Simon</h1>
-            <h2>// CYBER_SECURITY_SPECIALIST</h2>
-            <div class="contact-links">
-                <a href="https://simoncyber.do" class="btn" target="_blank">🌐 CORE_WEB</a>
-                <a href="https://wa.me" class="btn" target="_blank">💬 WHATSAPP</a>
-                <a href="https://t.me" class="btn" target="_blank">✈️ TELEGRAM</a>
+            <div class="header-content">
+                <h1>Anthony Simon</h1>
+                <h2>Especialista en Ciberseguridad</h2>
+                <div class="contact-links">
+                    <a href="https://simoncyber.do" class="btn" target="_blank">🌐 CORE_WEB</a>
+                    <a href="https://wa.me" class="btn" target="_blank">💬 WHATSAPP</a>
+                    <a href="https://t.me" class="btn" target="_blank">✈️ TELEGRAM</a>
+                </div>
+            </div>
+            
+            <!-- PANEL DEL CONTADOR DE VISITAS REAL -->
+            <div class="visitor-counter-box">
+                <span class="counter-label">NODO_VISITAS</span>
+                <span class="counter-number" id="visit-count">000000</span>
             </div>
         </header>
 
-        <!-- INFRAESTRUCTURA_HUMANA (SOBRE MÍ) -->
+        <!-- SOBRE MÍ -->
         <section id="about-me">
             <h3> INFRAESTRUCTURA_HUMANA (SOBRE_MÍ)</h3>
             <div class="cyber-card profile-text">
@@ -49,7 +57,7 @@
             </div>
         </section>
 
-        <!-- CREDENCIALES_VERIFICADAS (CERTIFICACIONES) -->
+        <!-- CERTIFICACIONES -->
         <section id="credentials">
             <h3> CREDENCIALES_VERIFICADAS</h3>
             <div class="cyber-card cert-grid">
@@ -76,7 +84,7 @@
             </div>
         </section>
 
-        <!-- CAPACIDADES_TECNICAS -->
+        <!-- CAPACIDADES -->
         <section id="capabilities">
             <h3> CAPACIDADES_TECNICAS</h3>
             <div class="grid">
@@ -97,7 +105,7 @@
             </div>
         </section>
 
-        <!-- SISTEMAS_DESPLEGADOS -->
+        <!-- SISTEMAS DESPLEGADOS -->
         <section id="systems">
             <h3> SISTEMAS_DESPLEGADOS</h3>
             <div class="cyber-card">
@@ -115,7 +123,6 @@
                 </div>
 
                 <div class="img-container">
-                    <!-- Ruta corregida apuntando a la carpeta de recursos de manera profesional -->
                     <img src="assets/ensp.jpg" alt="Topología eNSP - Anthony Simon" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="img-error">
                         ⚠️ SISTEMA MULTIMEDIA EN ESPERA (Sube tu captura dentro de la carpeta 'assets' con el nombre 'ensp.jpg')
@@ -125,10 +132,18 @@
         </section>
 
         <footer>
-            <p>// PORTFOLIO_V5.0 // ANTHONY SIMON &copy; 2026 // [SYSTEM_SECURE]</p>
+            <p>// PORTFOLIO_V6.0 // ANTHONY SIMON &copy; 2026 // [SYSTEM_SECURE]</p>
         </footer>
 
     </div>
+
+    <!-- SCRIPT DEL CONTADOR AUTOMÁTICO EN TIEMPO REAL -->
+    <script>
+        function cb(response) {
+            document.getElementById('visit-count').innerText = response.value.toString().padStart(6, '0');
+        }
+    </script>
+    <script async src="https://countapi.xyz"></script>
 
 </body>
 </html>
