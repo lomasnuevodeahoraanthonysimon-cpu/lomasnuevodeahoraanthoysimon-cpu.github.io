@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,7 +30,6 @@
             overflow-x: hidden;
         }
 
-        /* Línea superior estilo escáner */
         body::before {
             content: '';
             position: fixed;
@@ -56,7 +54,6 @@
             box-sizing: border-box;
         }
 
-        /* Encabezado Neumórfico */
         header {
             background: var(--panel-bg);
             border: 1px solid var(--panel-border);
@@ -66,8 +63,7 @@
             box-shadow: var(--neo-out);
             backdrop-filter: blur(12px);
             position: relative;
-            margin-bottom: 50px;
-            overflow: hidden;
+            margin-bottom: 40px;
         }
 
         header::after {
@@ -97,7 +93,6 @@
             text-transform: uppercase;
         }
 
-        /* Botones Interactivos de Redes */
         .contact-links {
             display: flex;
             justify-content: center;
@@ -118,7 +113,6 @@
             text-transform: uppercase;
             box-shadow: var(--neo-out);
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
         }
 
         .btn:hover {
@@ -128,12 +122,6 @@
             box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
         }
 
-        .btn:active {
-            transform: translateY(1px);
-            box-shadow: var(--neo-inset);
-        }
-
-        /* Estructura de Secciones */
         section {
             margin-bottom: 50px;
         }
@@ -156,7 +144,6 @@
             background: linear-gradient(90deg, var(--panel-border), transparent);
         }
 
-        /* Tarjetas Interactivas Dinámicas */
         .cyber-card {
             background: var(--panel-bg);
             border: 1px solid var(--panel-border);
@@ -165,16 +152,44 @@
             box-shadow: var(--neo-out);
             backdrop-filter: blur(8px);
             transition: all 0.3s ease;
-            position: relative;
         }
 
         .cyber-card:hover {
             border-color: rgba(0, 255, 102, 0.5);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 102, 0.1);
-            transform: scale(1.01);
         }
 
-        /* Lista de Certificaciones */
+        /* Estilos específicos para la sección Sobre Mí */
+        .profile-text p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .profile-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .highlight-box {
+            background: rgba(13, 17, 23, 0.6);
+            border: 1px solid var(--panel-border);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .highlight-box span {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--cyber-glow);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
         .cert-grid {
             display: flex;
             flex-direction: column;
@@ -189,13 +204,6 @@
             border: 1px solid var(--panel-border);
             padding: 15px 20px;
             border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .cert-item:hover {
-            background: rgba(0, 255, 102, 0.03);
-            border-color: var(--cyber-glow);
-            padding-left: 25px;
         }
 
         .cert-date {
@@ -205,9 +213,9 @@
             padding: 4px 10px;
             border-radius: 4px;
             border: 1px solid rgba(0, 255, 102, 0.2);
+            white-space: nowrap;
         }
 
-        /* Cuadrícula de Habilidades */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -223,16 +231,8 @@
             display: inline-block;
             margin: 5px 5px 0 0;
             border: 1px solid var(--panel-border);
-            transition: all 0.2s ease;
         }
 
-        .cyber-card:hover .badge {
-            border-color: rgba(0, 255, 102, 0.3);
-            background: rgba(0, 255, 102, 0.05);
-            color: var(--cyber-glow);
-        }
-
-        /* Visualizador de Red eNSP */
         .network-node {
             border-left: 3px solid var(--cyber-glow);
             padding-left: 15px;
@@ -244,7 +244,6 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid var(--panel-border);
-            position: relative;
             background: #000;
         }
 
@@ -252,11 +251,6 @@
             width: 100%;
             display: block;
             opacity: 0.85;
-            transition: opacity 0.3s ease;
-        }
-
-        .img-container:hover img {
-            opacity: 1;
         }
 
         footer {
@@ -272,10 +266,10 @@
 
     <div class="container">
         
-        <!-- HEADER INTERACTIVO -->
+        <!-- HEADER -->
         <header>
             <h1>Anthony Simon</h1>
-            <h2>// SEC_ARCHITECT</h2>
+            <h2>// CYBER_SECURITY_SPECIALIST</h2>
             <div class="contact-links">
                 <a href="https://simoncyber.do" class="btn" target="_blank">🌐 CORE_WEB</a>
                 <a href="https://wa.me" class="btn" target="_blank">💬 WHATSAPP</a>
@@ -283,31 +277,23 @@
             </div>
         </header>
 
-        <!-- SECCIÓN CERTIFICACIONES -->
-        <section id="credentials">
-            <h3>[01] CREDENCIALES_VERIFICADAS</h3>
-            <div class="cyber-card cert-grid">
-                <div class="cert-item">
-                    <div><strong>HCIA-Security V4.0</strong><br><small style="color: var(--text-secondary);">Huawei ICT Academy</small></div>
-                    <div class="cert-date">MAY 2026</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Ciberseguridad - Nivel Intermedio (80h)</strong><br><small style="color: var(--text-secondary);">INDOTEL / BID / Cymetria</small></div>
-                    <div class="cert-date">FEB 2026</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Habilidades de Liderazgo de Equipos (32h)</strong><br><small style="color: var(--text-secondary);">INDOTEL / BID / Cymetria</small></div>
-                    <div class="cert-date">FEB 2026</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Creación de Contenidos para YouTube (200h)</strong><br><small style="color: var(--text-secondary);">INFOTEP</small></div>
-                    <div class="cert-date">SEP 2025</div>
-                </div>
-                <div class="cert-item">
-                    <div><strong>Operaciones Básicas de Programas de Oficina (180h)</strong><br><small style="color: var(--text-secondary);">INFOTEP</small></div>
-                    <div class="cert-date">AGO 2025</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN OPERACIONES -->
+        <!-- NUEVA SECCIÓN: SOBRE MÍ (EL APARTADO DE REFERENCIA) -->
+        <section id="about-me">
+            <h3> INFRAESTRUCTURA_HUMANA (SOBRE_MÍ)</h3>
+            <div class="cyber-card profile-text">
+                <p>Saludos. Soy <strong>Anthony Simon</strong>, especialista en seguridad informática radicado en la República Dominicana. Mi enfoque técnico se centra en el diseño de arquitecturas de red resilientes, la mitigación de vectores de ataque perimetrales y la administración avanzada de firewalls de próxima generación.</p>
+                
+                <p>A lo largo de mi trayectoria académica y profesional, he sido certificado por academias líderes globales como <strong>Huawei ICT Academy</strong>, además de complementar mis capacidades técnicas de defensa con programas avanzados en habilidades de liderazgo avalados por el <strong>Banco Interamericano de Desarrollo (BID)</strong> e <strong>INDOTEL</strong>.</p>
+                
+                <p>Creo firmemente que la ciberseguridad moderna no solo requiere un control estricto de las configuraciones de red, sino también una documentación impecable y la capacidad de guiar a células de trabajo bajo escenarios de alta presión corporativa. Mi objetivo es asegurar la continuidad operativa de las organizaciones protegiendo sus activos más críticos.</p>
+                
+                <div class="profile-highlights">
+                    <div class="highlight-box">
+                        <span>+500h</span>
+                        <small style="color: var(--text-secondary);">Capacitación Técnica Avalada</small>
+                    </div>
+                    <div class="highlight-box">
+                        <span>100%</span>
+                        <small style="color: var(--text-secondary);">Enfoque en Mitigación</small>
+                    </div>
+                    <div class="highlight-box">
