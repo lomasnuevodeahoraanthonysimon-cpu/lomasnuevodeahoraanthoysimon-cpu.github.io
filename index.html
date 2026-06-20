@@ -1,159 +1,270 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Simon | Especialista en Ciberseguridad</title>
+    <title>Anthony Simon | Cyber Security Architect</title>
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --accent-color: #00ff66;
-            --text-color: #c9d1d9;
-            --text-headers: #ffffff;
-            --border-color: #30363d;
+            --bg-base: #06090f;
+            --cyber-glow: #00ff66;
+            --cyber-alert: #ff0055;
+            --panel-bg: rgba(22, 27, 34, 0.4);
+            --panel-border: rgba(48, 54, 61, 0.7);
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --neo-inset: inset 2px 2px 5px rgba(0,0,0,0.8), inset -2px -2px 5px rgba(255,255,255,0.05);
+            --neo-out: 5px 5px 15px rgba(0,0,0,0.7), -2px -2px 10px rgba(255,255,255,0.02);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-base);
+            background-image: 
+                linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            color: var(--text-primary);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Línea superior estilo escáner */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--cyber-glow), transparent);
+            animation: scan 4s linear infinite;
+            z-index: 1000;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            box-sizing: border-box;
         }
 
+        /* Encabezado Neumórfico */
         header {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 40px 30px;
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+            box-shadow: var(--neo-out);
+            backdrop-filter: blur(12px);
+            position: relative;
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: 'SECURE_NODE_ONLINE';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.65rem;
+            color: var(--cyber-glow);
+            letter-spacing: 2px;
+            opacity: 0.7;
         }
 
         header h1 {
-            color: var(--text-headers);
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
         }
 
         header h2 {
-            color: var(--accent-color);
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin: 0 0 20px 0;
+            color: var(--cyber-glow);
+            font-size: 1.2rem;
+            margin: 15px 0 30px 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
         }
 
+        /* Botones Interactivos de Redes */
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .btn {
-            background-color: var(--card-bg);
-            color: var(--text-color);
+            background: var(--panel-bg);
+            color: var(--text-primary);
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: 1px solid var(--panel-border);
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: var(--neo-out);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .btn:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-            box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+            border-color: var(--cyber-glow);
+            color: var(--cyber-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
         }
 
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: var(--neo-inset);
+        }
+
+        /* Estructura de Secciones */
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h3 {
-            color: var(--text-headers);
-            border-left: 4px solid var(--accent-color);
-            padding-left: 10px;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cyber-glow);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        h3::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--panel-border), transparent);
         }
 
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
+        /* Tarjetas Interactivas Dinámicas */
+        .cyber-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--neo-out);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .card h4 {
-            color: var(--text-headers);
-            margin: 0 0 10px 0;
+        .cyber-card:hover {
+            border-color: rgba(0, 255, 102, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 102, 0.1);
+            transform: scale(1.01);
         }
 
-        .cert-list, .skills-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        /* Lista de Certificaciones */
+        .cert-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .cert-list li {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 6px;
+        .cert-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(13, 17, 23, 0.6);
+            border: 1px solid var(--panel-border);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
         }
 
-        .cert-list span {
-            color: var(--accent-color);
-            font-size: 0.85rem;
-            font-weight: bold;
+        .cert-item:hover {
+            background: rgba(0, 255, 102, 0.03);
+            border-color: var(--cyber-glow);
+            padding-left: 25px;
+        }
+
+        .cert-date {
+            color: var(--cyber-glow);
+            font-size: 0.8rem;
+            background: rgba(0, 255, 102, 0.08);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+        }
+
+        /* Cuadrícula de Habilidades */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .badge {
-            background: rgba(0, 255, 102, 0.1);
-            color: var(--accent-color);
-            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            padding: 5px 12px;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             display: inline-block;
-            margin-right: 5px;
-            margin-bottom: 5px;
+            margin: 5px 5px 0 0;
+            border: 1px solid var(--panel-border);
+            transition: all 0.2s ease;
         }
 
-        .project-img-placeholder {
-            background: #1f242c;
-            border: 1px dashed var(--border-color);
-            padding: 40px;
-            text-align: center;
-            border-radius: 6px;
-            margin-top: 15px;
-            color: #8b949e;
+        .cyber-card:hover .badge {
+            border-color: rgba(0, 255, 102, 0.3);
+            background: rgba(0, 255, 102, 0.05);
+            color: var(--cyber-glow);
+        }
+
+        /* Visualizador de Red eNSP */
+        .network-node {
+            border-left: 3px solid var(--cyber-glow);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .img-container {
+            margin-top: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--panel-border);
+            position: relative;
+            background: #000;
+        }
+
+        .img-container img {
+            width: 100%;
+            display: block;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+        }
+
+        .img-container:hover img {
+            opacity: 1;
         }
 
         footer {
             text-align: center;
-            margin-top: 60px;
-            font-size: 0.85rem;
-            color: #8b949e;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+            margin-top: 80px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -161,86 +272,42 @@
 
     <div class="container">
         
+        <!-- HEADER INTERACTIVO -->
         <header>
             <h1>Anthony Simon</h1>
-            <h2>Especialista en Ciberseguridad</h2>
+            <h2>// SEC_ARCHITECT</h2>
             <div class="contact-links">
-                <a href="https://simoncyber.do" class="btn" target="_blank">🌐 simoncyber.do</a>
-                <a href="https://wa.me" class="btn" target="_blank">💬 WhatsApp</a>
-                <a href="https://t.me" class="btn" target="_blank">✈️ Telegram</a>
+                <a href="https://simoncyber.do" class="btn" target="_blank">🌐 CORE_WEB</a>
+                <a href="https://wa.me" class="btn" target="_blank">💬 WHATSAPP</a>
+                <a href="https://t.me" class="btn" target="_blank">✈️ TELEGRAM</a>
             </div>
         </header>
 
-        <section id="certificaciones">
-            <h3>Certificaciones Oficiales</h3>
-            <ul class="cert-list">
-                <li>
-                    <div><strong>HCIA-Security V4.0</strong><br><small>Huawei ICT Academy</small></div>
-                    <span>Mayo 2026</span>
-                </li>
-                <li>
-                    <div><strong>Ciberseguridad - Nivel Intermedio (80h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
-                    <span>Feb 2026</span>
-                </li>
-                <li>
-                    <div><strong>Habilidades de Liderazgo de Equipos (32h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
-                    <span>Feb 2026</span>
-                </li>
-                <li>
-                    <div><strong>Creación de Contenidos para YouTube (200h)</strong><br><small>INFOTEP</small></div>
-                    <span>Sep 2025</span>
-                </li>
-                <li>
-                    <div><strong>Operaciones Básicas de Programas de Oficina (180h)</strong><br><small>INFOTEP</small></div>
-                    <span>Ago 2025</span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="habilidades">
-            <h3>Competencias Core</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>🛡️ Seguridad Perimetral y Redes</h4>
-                    <p>Diseño de redes jerárquicas y arquitecturas distribuidas utilizando herramientas de simulación avanzada.</p>
-                    <span class="badge">Next-Gen Firewalls</span>
-                    <span class="badge">Segmentación de Zonas</span>
-                    <span class="badge">ACLs</span>
+        <!-- SECCIÓN CERTIFICACIONES -->
+        <section id="credentials">
+            <h3>[01] CREDENCIALES_VERIFICADAS</h3>
+            <div class="cyber-card cert-grid">
+                <div class="cert-item">
+                    <div><strong>HCIA-Security V4.0</strong><br><small style="color: var(--text-secondary);">Huawei ICT Academy</small></div>
+                    <div class="cert-date">MAY 2026</div>
                 </div>
-                <div class="card">
-                    <h4>👥 Gestión y Operación Estratégica</h4>
-                    <p>Capacidad probada para liderar células de respuesta y estructurar informes auditables bajo estándares del sector.</p>
-                    <span class="badge">Liderazgo Técnico</span>
-                    <span class="badge">Mitigación de Riesgos</span>
-                    <span class="badge">Documentación</span>
+                <div class="cert-item">
+                    <div><strong>Ciberseguridad - Nivel Intermedio (80h)</strong><br><small style="color: var(--text-secondary);">INDOTEL / BID / Cymetria</small></div>
+                    <div class="cert-date">FEB 2026</div>
+                </div>
+                <div class="cert-item">
+                    <div><strong>Habilidades de Liderazgo de Equipos (32h)</strong><br><small style="color: var(--text-secondary);">INDOTEL / BID / Cymetria</small></div>
+                    <div class="cert-date">FEB 2026</div>
+                </div>
+                <div class="cert-item">
+                    <div><strong>Creación de Contenidos para YouTube (200h)</strong><br><small style="color: var(--text-secondary);">INFOTEP</small></div>
+                    <div class="cert-date">SEP 2025</div>
+                </div>
+                <div class="cert-item">
+                    <div><strong>Operaciones Básicas de Programas de Oficina (180h)</strong><br><small style="color: var(--text-secondary);">INFOTEP</small></div>
+                    <div class="cert-date">AGO 2025</div>
                 </div>
             </div>
         </section>
 
-        <section id="proyectos">
-            <h3>Proyectos y Laboratorios</h3>
-            <div class="card">
-                <h4>Arquitectura de Red Segura y Segmentación Perimetral (eNSP)</h4>
-                <p>Simulación e implementación completa de un entorno perimetral fortificado utilizando un Firewall de Próxima Generación de Huawei para la gestión y aislamiento estricto del tráfico corporativo.</p>
-                
-                <ul>
-                    <li><strong>ZONE TRUST (192.168.12.0/24)</strong>: Segmento de usuarios internos de alta confianza.</li>
-                    <li><strong>ZONE DMZ (192.168.10.0/24)</strong>: Aislamiento estricto de servidores expuestos públicamente.</li>
-                    <li><strong>ZONE UNTRUST (40.180.10.0/24)</strong>: Simulación de accesos externos controlados e Internet.</li>
-                </ul>
-
-                <!-- Cuando subas la captura de eNSP a tu repositorio, reemplaza la línea de abajo por: <img src="ensp.jpg" style="width:100%; border-radius:6px; margin-top:15px;" alt="Laboratorio eNSP"> -->
-                <div class="project-img-placeholder">
-                    📸 Captura del Laboratorio eNSP vinculada en el repositorio
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Anthony Simon | Especialista en Ciberseguridad. Todo el contenido está respaldado por credenciales verificables.</p>
-        </footer>
-
-    </div>
-
-</body>
-</html>
+        <!-- SECCIÓN OPERACIONES -->
