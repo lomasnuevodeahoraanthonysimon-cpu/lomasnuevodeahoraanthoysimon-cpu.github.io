@@ -3,183 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Simon | Cyber Security Command Center</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Anthony Simon | Portafolio de Ciberseguridad</title>
+    <style>
+        :root {
+            --bg-color: #0a0f1d;
+            --card-bg: #111827;
+            --primary: #00ff66;
+            --secondary: #00e5ff;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .header-container h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-container h1 span {
+            color: var(--primary);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 15px;
+            border: 1px solid var(--text-muted);
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            background-color: rgba(0, 255, 102, 0.1);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(0, 229, 255, 0.1);
+            color: var(--secondary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-success {
+            background-color: rgba(0, 255, 102, 0.1);
+            color: var(--primary);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: #1f2937;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- LIENZO INTERACTIVO PARA EL MOTOR GRÁFICO MATRIX -->
-    <canvas id="cyberGridCanvas"></canvas>
-
-    <div class="dashboard-wrapper">
-        
-        <!-- TOP STATUS BAR -->
-        <div class="top-status-bar">
-            <div class="status-node">
-                <span class="pulse-indicator"></span>
-                <span>SEC_NODE: ONLINE</span>
-            </div>
-            <div class="location-node">LOC: DOMINICAN_REPUBLIC // IN_BOUND</div>
-            <div class="visitor-counter-box">
-                <span class="counter-label">ANÁLISIS_TRÁFICO:</span>
-                <span class="counter-number" id="visit-count">000000</span>
+    <header>
+        <div class="header-container">
+            <h1>&lt; <span>Anthony Simon</span> /&gt;</h1>
+            <p class="tagline">Profesional en Ciberseguridad & Tecnologías de la Información</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank">LinkedIn</a>
+                <a href="https://github.com/tu-usuario" target="_blank">GitHub</a>
             </div>
         </div>
+    </header>
 
-        <div class="dashboard-layout">
-            
-            <!-- PANEL LATERAL: PERFIL Y METRÍCAS -->
-            <aside class="sidebar-panel">
-                <div class="operator-profile">
-                    <div class="avatar-placeholder">// SIMON_CYBER</div>
-                    <h1>Anthony Simon</h1>
-                    <h2>Security Architect</h2>
+    <main>
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <p>Especialista técnico enfocado en la seguridad de la información, administración de plataformas digitales y mitigación de riesgos tecnológicos. Cuento con una sólida formación certificada internacionalmente en ciberseguridad, redes y gestión de entornos operativos, complementada con habilidades clave en liderazgo de equipos y optimización de contenido digital.</p>
+        </section>
+
+        <section id="certifications">
+            <h2>Certificaciones Destacadas</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="badge badge-success">Internacional</span>
+                    <h3>HCIA-Security V4.0</h3>
+                    <p class="text-muted">Huawei ICT Academy</p>
+                    <small>Credencial: EBG20260519025241</small>
                 </div>
-                
-                <div class="comms-panel">
-                    <span class="panel-tag">CANALES_COMUNICACIÓN</span>
-                    <a href="https://simoncyber.do" class="nav-btn" target="_blank">🌐 CORE_WEB</a>
-                    <a href="https://wa.me" class="nav-btn" target="_blank">💬 WHATSAPP</a>
-                    <a href="https://t.me" class="nav-btn" target="_blank">✈️ TELEGRAM</a>
+                <div class="card">
+                    <span class="badge">Nivel Intermedio</span>
+                    <h3>Ciberseguridad - Nivel Intermedio</h3>
+                    <p class="text-muted">INDOTEL / BID / CYMETRIA (80 horas)</p>
                 </div>
-
-                <div class="telemetry-box">
-                    <span class="panel-tag">METRÍCAS_RESUMEN</span>
-                    <div class="tel-row"><span>CAPACITACIÓN:</span> <strong>+500h</strong></div>
-                    <div class="tel-row"><span>AMENAZAS_MIT:</span> <strong>100%</strong></div>
-                    <div class="tel-row"><span>HUAWEI_ID:</span> <strong>HCIA_SEC</strong></div>
+                <div class="card">
+                    <span class="badge">Liderazgo</span>
+                    <h3>Habilidades de Liderazgo de Equipos</h3>
+                    <p class="text-muted">INDOTEL / BID / CYMETRIA (32 horas)</p>
                 </div>
-            </aside>
+            </div>
+        </section>
 
-            <!-- CONTENEDOR CENTRAL -->
-            <main class="main-dashboard">
-                
-                <!-- MAPA DE AMENAZAS EN TIEMPO REAL -->
-                <section class="dashboard-section">
-                    <div class="section-header">🌐 THREAT_INTELLIGENCE_MAP (SITUACIÓN_GLOBAL)</div>
-                    <div class="cyber-card map-card">
-                        <div class="map-overlay">
-                            <div class="ping p1"></div>
-                            <div class="ping p2"></div>
-                            <div class="ping p3"></div>
-                            <svg class="attack-lines">
-                                <path d="M 200 150 Q 350 80 500 130" class="laser-path"></path>
-                                <path d="M 600 220 Q 450 180 320 200" class="laser-path path-orange"></path>
-                            </svg>
-                        </div>
-                        <div class="map-legend">
-                            <span class="legend-item"><span class="dot red"></span> Ataque Dirigido</span>
-                            <span class="legend-item"><span class="dot orange"></span> Tráfico Anómalo</span>
-                            <span class="legend-item"><span class="dot green"></span> Nodo Protegido (RD)</span>
-                        </div>
-                    </div>
-                </section>
+        <section id="skills">
+            <h2>Habilidades Técnicas y Competencias</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Seguridad de Redes</span>
+                <span class="skill-tag">Mitigación de Vulnerabilidades</span>
+                <span class="skill-tag">HCIA-Security</span>
+                <span class="skill-tag">Operaciones de Oficina (Ofimática)</span>
+                <span class="skill-tag">Liderazgo de Equipos</span>
+                <span class="skill-tag">Creación de Contenido para YouTube</span>
+                <span class="skill-tag">Sistemas Operativos</span>
+            </div>
+        </section>
 
-                <!-- PERFIL -->
-                <section class="dashboard-section">
-                    <div class="section-header">🔍 OVERVIEW_PERFIL_HUMANO</div>
-                    <div class="cyber-card">
-                        <p>Especialista en ciberseguridad enfocado en la mitigación técnica de vectores de ataque perimetrales y el despliegue de infraestructuras críticas resilientes. Capacitado bajo rigurosos estándares globales de **Huawei ICT Academy** y entrenado en la coordinación táctica de células críticas organizacionales bajo programas avalados por el **BID** e **INDOTEL**.</p>
-                    </div>
-                </section>
+        <section id="education">
+            <h2>Educación y Formación Adicional</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Operaciones Básicas de Programas de Oficina</h3>
+                    <p class="text-muted">INFOTEP (180 horas) - Formación Virtual</p>
+                </div>
+                <div class="card">
+                    <h3>Creación de Contenidos para YouTube</h3>
+                    <p class="text-muted">INFOTEP (200 horas) - Centro San Juan</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-                <!-- CAPACIDADES -->
-                <section class="dashboard-section">
-                    <div class="section-header">⚙️ NÚCLEOS_OPERATIVOS_ACTIVOS</div>
-                    <div class="grid-dashboard">
-                        <div class="cyber-card tile">
-                            <span class="tile-icon">🛡️</span>
-                            <h3>SEGURIDAD DE REDES</h3>
-                            <p>Segmentación criptográfica y control granular de políticas perimetrales de tráfico.</p>
-                            <div class="badge-row">
-                                <span class="badge">NGFW</span>
-                                <span class="badge">ACL_Control</span>
-                            </div>
-                        </div>
-                        <div class="cyber-card tile">
-                            <span class="tile-icon">👥</span>
-                            <h3>LIDERAZGO TÉCNICO</h3>
-                            <p>Gestión operativa y análisis de riesgos en infraestructuras críticas corporativas.</p>
-                            <div class="badge-row">
-                                <span class="badge">Gestión_SOC</span>
-                                <span class="badge">Reportes</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    <footer>
+        <p>&copy; 2026 Anthony Simon. Todos los derechos reservados.</p>
+    </footer>
 
-                <!-- CERTIFICACIONES -->
-                <section class="dashboard-section">
-                    <div class="section-header">📑 REGISTRO_CREDENCIALES_VERIFICADAS</div>
-                    <div class="cyber-card list-container">
-                        <div class="list-item">
-                            <div class="item-info"><strong>HCIA-Security V4.0</strong><br><small>Huawei ICT Academy</small></div>
-                            <span class="item-tag security">MAY 2026</span>
-                        </div>
-                        <div class="list-item">
-                            <div class="item-info"><strong>Ciberseguridad - Nivel Intermedio (80h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
-                            <span class="item-tag security">FEB 2026</span>
-                        </div>
-                        <div class="list-item">
-                            <div class="item-info"><strong>Habilidades de Liderazgo de Equipos (32h)</strong><br><small>INDOTEL / BID / Cymetria</small></div>
-                            <span class="item-tag management">FEB 2026</span>
-                        </div>
-                        <div class="list-item">
-                            <div class="item-info"><strong>Creación de Contenidos para YouTube (200h)</strong><br><small>INFOTEP</small></div>
-                            <span class="item-tag office">SEP 2025</span>
-                        </div>
-                        <div class="list-item">
-                            <div class="item-info"><strong>Operaciones Básicas de Programas de Oficina (180h)</strong><br><small>INFOTEP</small></div>
-                            <span class="item-tag office">AGO 2025</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- TOPOLOGÍAS -->
-                <section class="dashboard-section">
-                    <div class="section-header">📊 MONITOREO_TOPOLOGÍAS_DESPLEGADAS</div>
-                    <div class="cyber-card">
-                        <h3>LAB_REF: Arquitectura Perimetral Fortificada (Huawei eNSP)</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">Segmentación perimetral y aislamiento táctico mediante Firewall USG6000V en entornos de simulación avanzada empresarial.</p>
-                        
-                        <div class="node-status-grid">
-                            <div class="node-stat trust"><span>TRUST_ZONE</span> <code>192.168.12.0/24</code></div>
-                            <div class="node-stat dmz"><span>DMZ_ZONE</span> <code>192.168.10.0/24</code></div>
-                            <div class="node-stat untrust"><span>UNTRUST_ZONE</span> <code>40.180.10.0/24</code></div>
-                        </div>
-
-                        <div class="img-container">
-                            <img src="assets/ensp.jpg" alt="Topología eNSP - Anthony Simon" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <div class="img-error">
-                                ⚠️ WAITING_IMAGE_FEED (assets/ensp.jpg)
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- TERMINAL EN VIVO -->
-                <section class="dashboard-section">
-                    <div class="section-header">⌨️ LIVE_AUDIT_LOGS (CONSOLA_ACTIVA)</div>
-                    <div class="cyber-card terminal-card">
-                        <div class="terminal-body" id="log-terminal">
-                            <div class="log-line text-blue">[SYSTEM] Inicializando consola de auditoría perimetral...</div>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
-        </div>
-        
-        <footer>
-            // SYSTEM_DASHBOARD_V8.0 // ANTHONY SIMON &copy; 2026 // ALL_RIGHTS_RESERVED
-        </footer>
-    </div>
-
-    <!-- SCRIPTS EN TIEMPO REAL -->
-    <script>
-        // 1. Script de la Matriz Cinética por Hardware (Canvas Background)
-        const canvas = document.getElementById('cyberGridCanvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
+</body>
+</html>
