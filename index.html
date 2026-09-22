@@ -1,138 +1,371 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Simon | Cybersecurity Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Carga segura de FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anthony Simon — Cybersecurity Analyst &amp; Pentester</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Encabezado Principal -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="nav-container container">
-                <a href="#" class="logo">S.Cyber.do<span class="accent">_</span></a>
-                
-                <!-- Botón de menú hamburguesa para móviles -->
-                <button class="menu-toggle" aria-label="Abrir menú de navegación">
-                    <i class="fas fa-bars"></i>
-                </button>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" id="brandMark">
+      <span class="brand-mark">
+        <svg viewBox="0 0 36 40" width="20" height="22" fill="none">
+          <path class="mark-outline" d="M18 1.5 L33.5 7.5 V19 C33.5 29 27 35.5 18 38.5 C9 35.5 2.5 29 2.5 19 V7.5 Z" stroke="currentColor" stroke-width="2"/>
+          <path class="mark-check" d="M11 19 L16 24 L26 12" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">simoncyber.do<span class="brand-caret">_</span></span>
+    </a>
+    <nav class="links">
+      <a href="#about">Sobre mí</a>
+      <a href="#certifications">Certificaciones</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#projects">Proyectos</a>
+      <span class="nav-clock" id="navClock" title="Hora local — Santo Domingo, RD">--:--:--</span>
+      <a href="#contact" class="nav-cta">Contactar</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#about">Sobre mí</a>
+    <a href="#certifications">Certificaciones</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#contact">Contactar</a>
+  </div>
+</header>
 
-                <ul class="nav-links">
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#certifications">Certificaciones</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Área Hero (Introducción) -->
-    <section class="hero">
-        <div class="hero-content container">
-            <h1>Hola, soy <span class="highlight">Anthony Simon</span></h1>
-            <h2 class="subtitle">Cybersecurity Analyst | Pentester & Network Auditor | Python Developer</h2>
-            <p>Especializado en seguridad ofensiva y defensiva, análisis de vulnerabilidades e infraestructura robusta.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn primary">Ver Proyectos</a>
-                <a href="#certifications" class="btn secondary">Certificaciones</a>
-            </div>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="hero-role reveal reveal-1">~2 años en formación práctica en ciberseguridad</p>
+        <h1 class="reveal reveal-1">Anthony Simon</h1>
+        <p class="hero-subtitle reveal reveal-2">Cybersecurity Analyst en formación · Pentesting &amp; Auditoría de Redes · Python Developer</p>
+        <p class="hero-desc reveal reveal-3">Estudiante de ciberseguridad con cerca de dos años combinando formación técnica (INFOTEP, Huawei ICT Academy, INDOTEL/BID) con práctica real: reconocimiento y escaneo con Nmap, análisis de tráfico con Wireshark, pruebas sobre aplicaciones web con Burp Suite, y automatización de tareas con Python y Flask.</p>
+        <div class="hero-actions reveal reveal-4">
+          <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+          <a href="#certifications" class="btn btn-ghost">Certificaciones</a>
         </div>
-    </section>
-
-    <!-- Cuerpo Principal -->
-    <main>
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">Sobre Mí</h2>
-                <div class="about-text">
-                    <p>Soy un apasionado de la tecnología, la ciberseguridad y el desarrollo de sistemas. Me especializo en la seguridad ofensiva y defensiva, enfocado en construir, auditar y proteger entornos digitales para que sean eficientes, seguros y escalables.</p>
-                    <p>Mi enfoque profesional combina una sólida base técnica en el análisis de vulnerabilidades y pentesting con la capacidad de liderar equipos y gestionar proyectos de manera integral bajo altos estándares organizativos.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="certifications" class="section bg-light">
-            <div class="container">
-                <h2 class="section-title">Certificaciones Profesionales</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
-                        <h3>HCIA-Security V4.0</h3>
-                        <p class="issuer">Huawei ICT Academy</p>
-                        <span class="badge">infotep </span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
-                        <h3>Ciberseguridad - Nivel Intermedio</h3>
-                        <p class="issuer">INDOTEL / BID / Cymetria (80h)</p>
-                        <span class="badge">Santo Domingo</span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
-                        <h3>Liderazgo de Equipos</h3>
-                        <p class="issuer">INDOTEL / BID / Cymetria (32h)</p>
-                        <span class="badge">Gestión IT</span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon" aria-hidden="true"><i class="fab fa-youtube"></i></div>
-                        <h3>Creación de Contenidos</h3>
-                        <p class="issuer">INFOTEP (200h) - Certificación ISO 9001</p>
-                        <span class="badge">Documentación Técnica</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Habilidades Técnicas</h2>
-                <div class="skills-container">
-                    <div class="skill-tag"><i class="fas fa-terminal" aria-hidden="true"></i> Auditoría de Redes</div>
-                    <div class="skill-tag"><i class="fas fa-user-secret" aria-hidden="true"></i> Pentesting (Pruebas de Penetración)</div>
-                    <div class="skill-tag"><i class="fab fa-python" aria-hidden="true"></i> Python & Flask Development</div>
-                    <div class="skill-tag"><i class="fas fa-server" aria-hidden="true"></i> Linux Server (Ubuntu Deployment)</div>
-                    <div class="skill-tag"><i class="fas fa-bug" aria-hidden="true"></i> Análisis de Vulnerabilidades</div>
-                    <div class="skill-tag"><i class="fas fa-user-shield" aria-hidden="true"></i> Seguridad Perimetral</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section bg-light">
-            <div class="container">
-                <h2 class="section-title">Proyectos Destacados</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <i class="fas fa-folder-open folder-icon" aria-hidden="true"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/tu-usuario/tu-repositorio" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de la plataforma Fintech en GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <h3>aprendo rapido</h3>
-                        <p>instalacion de sistemas y automatisacion de tareas</p>
-                        <div class="tags">
-                            <span>Python</span> <span>Flask</span> <span>Fintech Backend</span> <span>Ubuntu Server</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Tríada CIA -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Anthony Simon | Comprometido con la Tríada de Seguridad: Confidencialidad, Integridad y Disponibilidad (CIA).</p>
+        <div class="contact-chips reveal reveal-4">
+          <a href="mailto:lomasnuevodeahoraanthonysimon@gmail.com" class="copyable" data-copy="lomasnuevodeahoraanthonysimon@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+            lomasnuevodeahoraanthonysimon@gmail.com
+            <span class="copy-note">Copiado</span>
+          </a>
+          <a href="tel:+18092513024" class="copyable" data-copy="+1 (809) 251-3024">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+            +1 (809) 251-3024
+            <span class="copy-note">Copiado</span>
+          </a>
+          <span>Santo Domingo, RD</span>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+      <svg class="hero-art reveal reveal-2" viewBox="0 0 420 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de un escudo con topología de red">
+        <defs>
+          <clipPath id="shieldClip">
+            <path d="M210 12 L392 70 V210 C392 322 316 400 210 448 C104 400 28 322 28 210 V70 Z"/>
+          </clipPath>
+        </defs>
+        <path d="M210 12 L392 70 V210 C392 322 316 400 210 448 C104 400 28 322 28 210 V70 Z"
+              fill="var(--bg-panel)" stroke="var(--navy)" stroke-width="2"/>
+        <g clip-path="url(#shieldClip)" stroke="var(--line-strong)" stroke-width="1">
+          <line x1="28" y1="120" x2="392" y2="120"/>
+          <line x1="28" y1="210" x2="392" y2="210"/>
+          <line x1="28" y1="300" x2="392" y2="300"/>
+          <line x1="130" y1="12" x2="130" y2="448"/>
+          <line x1="290" y1="12" x2="290" y2="448"/>
+        </g>
+        <g fill="none" stroke="var(--navy-mid)" stroke-width="1.4" opacity="0.85">
+          <path d="M90 150 L190 190 L150 280 L250 250 L320 330"/>
+          <path d="M190 190 L260 160 L330 210"/>
+          <path d="M150 280 L110 350"/>
+        </g>
+        <g fill="var(--navy-deep)">
+          <circle cx="90" cy="150" r="6"/>
+          <circle cx="190" cy="190" r="7"/>
+          <circle cx="150" cy="280" r="6"/>
+          <circle cx="250" cy="250" r="6"/>
+          <circle cx="320" cy="330" r="7"/>
+          <circle cx="260" cy="160" r="5"/>
+          <circle cx="330" cy="210" r="5"/>
+          <circle cx="110" cy="350" r="5"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="190" cy="190" r="3.2"/>
+          <circle cx="320" cy="330" r="3.2"/>
+        </g>
+        <path d="M210 150 L258 172 V228 C258 268 236 296 210 312 C184 296 162 268 162 228 V172 Z"
+              fill="var(--bg-panel)" stroke="var(--accent)" stroke-width="2.4"/>
+        <path d="M188 226 L204 244 L234 204" fill="none" stroke="var(--accent-deep, var(--accent))" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sobre mí</h2>
+        <span class="section-index">Perfil profesional</span>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>Llevo cerca de dos años formándome en ciberseguridad, construyendo experiencia real de a poco: primero con cursos técnicos como HCIA-Security V4.0 (Huawei) y el programa de Ciberseguridad de INDOTEL/BID/Cymetria, y después llevando eso a la práctica en laboratorios propios y proyectos personales.</p>
+          <p>En el día a día trabajo con Nmap para reconocimiento y escaneo de redes, Wireshark para analizar tráfico a nivel de paquete, y Burp Suite para probar aplicaciones web. Del lado de desarrollo, uso Python y Flask para automatizar tareas y construir herramientas propias, como el backend que armé para "Aprendo Rápido".</p>
+        </div>
+        <div class="about-focus">
+          <h3>Con qué trabajo</h3>
+          <ul>
+            <li><span>Reconocimiento y escaneo de redes</span><span>Nmap</span></li>
+            <li><span>Análisis de tráfico y protocolos</span><span>Wireshark</span></li>
+            <li><span>Pruebas sobre aplicaciones web</span><span>Burp Suite</span></li>
+            <li><span>Automatización y backends propios</span><span>Python / Flask</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Certificaciones profesionales</h2>
+        <span class="section-index">4 credenciales</span>
+      </div>
+
+      <div class="cert-row reveal-on-scroll">
+        <span class="cert-name">HCIA-Security V4.0</span>
+        <span class="cert-issuer">Huawei ICT Academy</span>
+        <span class="cert-meta">INFOTEP</span>
+        <span class="cert-status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>
+          Verificado
+        </span>
+      </div>
+      <div class="cert-row reveal-on-scroll">
+        <span class="cert-name">Ciberseguridad — Nivel Intermedio</span>
+        <span class="cert-issuer">INDOTEL / BID / Cymetria</span>
+        <span class="cert-meta">80h · Santo Domingo</span>
+        <span class="cert-status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>
+          Verificado
+        </span>
+      </div>
+      <div class="cert-row reveal-on-scroll">
+        <span class="cert-name">Liderazgo de Equipos</span>
+        <span class="cert-issuer">INDOTEL / BID / Cymetria</span>
+        <span class="cert-meta">32h · Gestión IT</span>
+        <span class="cert-status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>
+          Verificado
+        </span>
+      </div>
+      <div class="cert-row reveal-on-scroll">
+        <span class="cert-name">Creación de Contenidos</span>
+        <span class="cert-issuer">INFOTEP · Certificación ISO 9001</span>
+        <span class="cert-meta">200h · Doc. técnica</span>
+        <span class="cert-status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>
+          Verificado
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Habilidades técnicas</h2>
+        <span class="section-index">6 competencias</span>
+      </div>
+      <div class="skills-list">
+        <div class="skill-item reveal-on-scroll">
+          <div class="skill-top">
+            <span class="skill-name">Auditoría de Redes</span>
+            <span class="skill-level-label">Consolidado</span>
+          </div>
+          <div class="skill-level"><span class="filled"></span><span class="filled"></span><span class="filled"></span></div>
+          <p class="skill-desc">Reconocimiento y escaneo de redes con Nmap para mapear hosts, puertos y servicios expuestos.</p>
+        </div>
+        <div class="skill-item reveal-on-scroll">
+          <div class="skill-top">
+            <span class="skill-name">Pentesting</span>
+            <span class="skill-level-label">En práctica</span>
+          </div>
+          <div class="skill-level"><span class="filled"></span><span class="filled"></span><span></span></div>
+          <p class="skill-desc">Pruebas controladas sobre aplicaciones web con Burp Suite, en entornos de laboratorio propios.</p>
+        </div>
+        <div class="skill-item reveal-on-scroll">
+          <div class="skill-top">
+            <span class="skill-name">Python &amp; Flask Development</span>
+            <span class="skill-level-label">En práctica</span>
+          </div>
+          <div class="skill-level"><span class="filled"></span><span class="filled"></span><span></span></div>
+          <p class="skill-desc">Backends y scripts de automatización — la base del proyecto "Aprendo Rápido".</p>
+        </div>
+        <div class="skill-item reveal-on-scroll">
+          <div class="skill-top">
+            <span class="skill-name">Linux Server (Ubuntu)</span>
+            <span class="skill-level-label">En práctica</span>
+          </div>
+          <div class="skill-level"><span class="filled"></span><span class="filled"></span><span></span></div>
+          <p class="skill-desc">Instalación y configuración de servidores Ubuntu para desplegar proyectos propios.</p>
+        </div>
+        <div class="skill-item reveal-on-scroll">
+          <div class="skill-top">
+            <span class="skill-name">Análisis de Vulnerabilidades</span>
+            <span class="skill-level-label">Consolidado</span>
+          </div>
+          <div class="skill-level"><span class="filled"></span><span class="filled"></span><span class="filled"></span></div>
+          <p class="skill-desc">Captura y análisis de tráfico con Wireshark para detectar comportamiento anómalo.</p>
+        </div>
+        <div class="skill-item reveal-on-scroll">
+          <div class="skill-top">
+            <span class="skill-name">Seguridad Perimetral</span>
+            <span class="skill-level-label">Aprendiendo</span>
+          </div>
+          <div class="skill-level"><span class="filled"></span><span></span><span></span></div>
+          <p class="skill-desc">Fundamentos de firewalls y segmentación de red, cubiertos en la certificación de INDOTEL/BID.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Proyectos destacados</h2>
+        <span class="section-index">1 proyecto</span>
+      </div>
+      <div class="project-card reveal-on-scroll">
+        <div>
+          <h3>Aprendo Rápido</h3>
+          <p>Proyecto personal para practicar el ciclo completo de un despliegue: un backend en Python y Flask, instalado y corriendo sobre un servidor Ubuntu propio, con tareas operativas automatizadas de principio a fin.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>Fintech Backend</span>
+            <span>Ubuntu Server</span>
+          </div>
+        </div>
+        <a class="project-link" href="https://github.com/anthonysimon" target="_blank" rel="noopener">
+          Ver en GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-top">
+      <div>
+        <h2>Hablemos de tu próximo proyecto de seguridad</h2>
+        <p class="contact-lede">Disponible para auditorías, pentesting y desarrollo de soluciones a medida. Escríbeme o conéctate por cualquiera de estos canales.</p>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:lomasnuevodeahoraanthonysimon@gmail.com" class="copyable" data-copy="lomasnuevodeahoraanthonysimon@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+          lomasnuevodeahoraanthonysimon@gmail.com
+          <span class="copy-note">Copiado</span>
+        </a>
+        <a href="tel:+18092513024" class="copyable" data-copy="+1 (809) 251-3024">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+          +1 (809) 251-3024
+          <span class="copy-note">Copiado</span>
+        </a>
+        <a href="https://github.com/anthonysimon" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.4 0C6.4 2.8 5.3 3.1 5.3 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.9 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          github.com/anthonysimon
+        </a>
+        <a href="https://linkedin.com/in/anthonysimon" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M7.5 10.5V17M7.5 7.5v.01M12 17v-4a2 2 0 0 1 4 0v4M12 12.5V17"/></svg>
+          linkedin.com/in/anthonysimon
+        </a>
+      </div>
+    </div>
+    <div class="contact-bottom">
+      <span>© 2026 Anthony Simon</span>
+      <span>Tríada CIA — Confidencialidad · Integridad · Disponibilidad</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.textContent = open ? '✕' : '☰';
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = '☰';
+  }));
+
+  // Logo draws itself in once the page has settled
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('brandMark').classList.add('mark-ready'), 400);
+  });
+
+  // Live clock — Santo Domingo local time
+  const clockEl = document.getElementById('navClock');
+  function tickClock() {
+    if (!clockEl) return;
+    const now = new Date();
+    const formatted = new Intl.DateTimeFormat('es-DO', {
+      timeZone: 'America/Santo_Domingo',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+    }).format(now);
+    clockEl.textContent = formatted;
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+
+  // Scroll-triggered reveals for cert rows, skill bars, project card
+  const revealTargets = document.querySelectorAll('.reveal-on-scroll, .skill-item');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('in-view'), i * 70);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(el => io.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('in-view'));
+  }
+
+  // Copy-to-clipboard on contact chips (still lets mailto:/tel: open normally)
+  document.querySelectorAll('.copyable').forEach(el => {
+    el.addEventListener('click', async () => {
+      const value = el.getAttribute('data-copy');
+      const note = el.querySelector('.copy-note');
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch (err) {
+        // Clipboard API unavailable — link still opens normally
+      }
+      if (note) {
+        note.classList.add('show');
+        setTimeout(() => note.classList.remove('show'), 1400);
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
